@@ -5,8 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./quiz.css">
 </head>
 <body>
-    
+    <div class="header">
+        <h1 class="high-score">View High Scores</h1>
+        <h1 class="time">Time:</h1>
+    </div>
+
+    <div class="container">
+        <section id="title">Quiz</section>
+        <section id="question"></section>
+        <label class="option"><input type="radio"></label>
+        <label class="option"><input type="radio"></label>
+        <label class="option"><input type="radio"></label>
+        <label class="option"><input type="radio"></label>
+        <button type="button">Start</button>
+        <button type="button">Next Question</button>
+    </div>
+    <script src="./quiz.js"></script>
 </body>
 </html>
