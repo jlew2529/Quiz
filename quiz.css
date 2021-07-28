@@ -27,5 +27,32 @@ body {
 
 #question {
     padding: 20px;
+    margin: 10px;
     background: red;
+}
+
+.option {
+    width: 470px;
+    display: inline-block;
+    padding: 10px 0px 10px 15px;
+    margin: 10px 0 10px 12px;
+    vertical-align: middle;
+    background: rgb(184, 184, 190);
+}
+
+.start {
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    background: red;
+    border: none;
+}
+
+.next {
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    background: red;
+    float: right;
+    border: none;
 }
