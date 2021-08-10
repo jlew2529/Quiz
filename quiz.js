@@ -71,7 +71,8 @@ var questions = [{
     "answer": "2"
 }]
 
-var startQuiz = document.querySelector(".start");
+var startBtn = document.querySelector(".start");
+var nextBtn = document.querySelector(".next");
 var timeEl = document.querySelector(".time");
 var questionEl = document.querySelector("#question");
 var opt1 = document.querySelector("#opt1");
@@ -80,8 +81,9 @@ var opt3 = document.querySelector("#opt3");
 var opt4 = document.querySelector("#opt4");
 var currentQuestion = 0;
 var secondsLeft = 60;
+var totalQuestions = questions.length;
 
-startQuiz.addEventListener("click", function() {
+startBtn.addEventListener("click", function() {
     console.log("Quiz Started!");
     function setTime() {
         var timerInterval = setInterval(function() {
@@ -105,4 +107,23 @@ startQuiz.addEventListener("click", function() {
         opt4.textContent = q.option4;
     }
     loadQuestion(currentQuestion);
+
+    nextBtn.addEventListener("click", function() {
+        var selectedOption = document.querySelector("input[type=radio]:checked");
+        if (!selectedOption){
+            alert("Please select your answer.");
+            return;
+        }
+        var answer = selectedOption.value;
+        if (questions[currentQuestion].answer === answer) {
+            alert("Correct!");
+        } else {
+            if (questions[currentQuestion].answer != answer) {
+                alert("Wrong Answer.");
+            }
+        }
+        selectedOption.checked = false;
+        currentQuestion++;
+        loadQuestion(currentQuestion);
+    });
 });
