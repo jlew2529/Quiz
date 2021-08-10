@@ -74,6 +74,10 @@ var questions = [{
 var startQuiz = document.querySelector(".start");
 var timeEl = document.querySelector(".time");
 var questionEl = document.querySelector("#question");
+var opt1 = document.querySelector("#opt1");
+var opt2 = document.querySelector("#opt2");
+var opt3 = document.querySelector("#opt3");
+var opt4 = document.querySelector("#opt4");
 var currentQuestion = 0;
 var secondsLeft = 60;
 
@@ -95,6 +99,10 @@ startQuiz.addEventListener("click", function() {
     function loadQuestion(event) {
         var q = questions[event];
         questionEl.textContent = (event + 1) + ". " + q.question;
+        opt1.textContent = q.option1;
+        opt2.textContent = q.option2;
+        opt3.textContent = q.option3;
+        opt4.textContent = q.option4;
     }
     loadQuestion(currentQuestion);
 });
