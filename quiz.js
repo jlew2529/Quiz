@@ -73,6 +73,8 @@ var questions = [{
 
 var startQuiz = document.querySelector(".start");
 var timeEl = document.querySelector(".time");
+var questionEl = document.querySelector("#question");
+var currentQuestion = 0;
 var secondsLeft = 60;
 
 startQuiz.addEventListener("click", function() {
@@ -88,6 +90,11 @@ startQuiz.addEventListener("click", function() {
             }
         }, 1000);
     }
-
     setTime();
+
+    function loadQuestion(event) {
+        var q = questions[event];
+        questionEl.textContent = (event + 1) + ". " + q.question;
+    }
+    loadQuestion(currentQuestion);
 });
